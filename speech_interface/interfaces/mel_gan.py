@@ -28,7 +28,7 @@ class InterfaceMelGAN(Interface):
         super().__init__()
         assert model_name in PARAMS['models'], \
             'Model name {} is not valid! choose in {}'.format(
-                model_name, str(PARAMS['models']))
+                model_name, str(PARAMS['models'].keys()))
 
         model_name_mapping = {
             'mel_gan_lj': 'linda_johnson',

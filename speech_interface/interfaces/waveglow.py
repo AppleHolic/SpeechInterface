@@ -39,7 +39,7 @@ class InterfaceWaveGlow(Interface):
     def __init__(self, model_name: str = 'hifi_gan_v1_universal', device='cuda'):
         assert model_name in PARAMS['models'], \
             'Model name {} is not valid! choose in {}'.format(
-                model_name, str(PARAMS['models']))
+                model_name, str(PARAMS['models'].keys()))
         self.device = device
 
         # encoder
