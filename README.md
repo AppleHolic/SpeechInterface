@@ -30,8 +30,9 @@ $ pip install speech_interface
 
 ## Available neural vocoders
 
-1. Hifi-GAN (Universal v1, VCTK, LJSpeech)
-2. WaveGlow, MelGAN (WIP)
+1. Hifi-GAN (Universal v1, VCTK, LJSpeech) : speech_interface.interfaces.hifi_gan.InterfaceHifiGAN
+2. MelGAN (Multi Speaker and LJSpeech from official repository) : speech_interface.interfaces.mel_gan.InterfaceMelGAN
+2. WaveGlow (LJSpeech) (Universal will be added after solving import error) : speech_interface.interfaces.waveglow.InterfaceWaveGlow
 3. Multi-band MelGAN, Parallel WaveGAN (WIP)
 
 
