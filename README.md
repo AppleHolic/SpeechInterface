@@ -1,5 +1,7 @@
 # SpeechInterface
 
+[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FAppleHolic%2FSpeechInterface&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
 A Speech Interface Toolkit for Neural Speech Synthesis with Pytorch
 
 This repository is made for deploying your neural speech synthesis experiments efficiently. 
@@ -17,6 +19,13 @@ The main feature is defined as:
 - Usage Examples
   - Compare experimental results of neural vocoder with others
   - Use directly audio features and neural vocoders for neural speech synthesis models
+
+
+## Install
+
+```bash
+$ pip install speech_interface
+```
 
 
 ## Available neural vocoders
