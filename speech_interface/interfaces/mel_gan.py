@@ -77,7 +77,3 @@ class InterfaceMelGAN(Interface):
         :return: raw waveform tensor. (N, Tw)
         """
         return self.vocoder.mel2wav(mel_spectrogram).squeeze(1)
-
-    @torch.jit.export
-    def forward(self, x):
-        return self.decode(x)
