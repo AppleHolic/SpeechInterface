@@ -68,7 +68,7 @@ class InterfaceHifiGAN(Interface):
 
         # decoder
         model_config = getattr(hifi_gan, '_'.join(model_name.split('_')[:-1]))
-        self.decoder = hifi_gan.Generator(**model_config())
+        self.decoder = hifi_gan.Generator(**model_config()).to(device)
 
         # load pretrained chkpt
         self.load_pretrained_chkpt('hifi_gan', model_name)

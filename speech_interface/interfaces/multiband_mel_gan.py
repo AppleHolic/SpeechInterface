@@ -55,8 +55,8 @@ class InterfaceMultibandMelGAN(Interface):
         # make stat tensors
         param_key = 'vctk' if 'vctk' in model_name else 'lj'
         stats = MULTI_BAND_MEL_GAN_PARAMS[param_key]
-        self.mean = torch.FloatTensor(stats['mean']).unsqueeze(0).unsqueeze(-1)
-        self.scale = torch.FloatTensor(stats['scale']).unsqueeze(0).unsqueeze(-1)
+        self.mean = torch.FloatTensor(stats['mean']).unsqueeze(0).unsqueeze(-1).to(device)
+        self.scale = torch.FloatTensor(stats['scale']).unsqueeze(0).unsqueeze(-1).to(device)
 
         # print params
         print('Total Model {} params.'.format(self.num_params(self.vocoder)))
