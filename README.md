@@ -32,8 +32,8 @@ $ pip install speech_interface
 
 1. Hifi-GAN (Universal v1, VCTK, LJSpeech) : speech_interface.interfaces.hifi_gan.InterfaceHifiGAN
 2. MelGAN (Multi Speaker and LJSpeech from official repository) : speech_interface.interfaces.mel_gan.InterfaceMelGAN
-2. WaveGlow (LJSpeech) (Universal will be added after solving import error) : speech_interface.interfaces.waveglow.InterfaceWaveGlow
-3. Multi-band MelGAN, Parallel WaveGAN (WIP)
+3. WaveGlow (LJSpeech) (Universal will be added after solving import error) : speech_interface.interfaces.waveglow.InterfaceWaveGlow
+4. Multi-band MelGAN (VCTK, LJSpeech) : speech_interface.interfaces.multiband_mel_gan.InterfaceMultibandMelGAN
 
 
 ## Example
@@ -80,7 +80,9 @@ print(InterfaceHifiGAN.audio_params())
 ## Reference
 
 - Hifi-GAN : https://github.com/jik876/hifi-gan
-
+- MelGAN : https://github.com/descriptinc/melgan-neurips
+- WaveGlow : https://github.com/NVIDIA/waveglow
+- Multi-band MelGAN : https://github.com/kan-bayashi/ParallelWaveGAN
 
 ## License
 

@@ -9,7 +9,7 @@ def get_requirements(filename: str = 'requirements.txt') -> List[str]:
 
 setup(
     name='speech_interface',
-    version='0.0.1',
+    version='0.0.2',
     license='MIT',
     author='ILJI CHOI',
     author_email='choiilji@gmail.com',
