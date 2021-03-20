@@ -35,17 +35,12 @@ class MelSpectrogram(nn.Module):
         return torch.istft(stft, self.n_fft, hop_length=self.hop_size, win_length=self.window_size,
                            window=self.window, center=is_center, normalized=False, onesided=True)
 
-    def to_mel(self, mag: torch.Tensor, eps: float = 1e-5, norm_ratio: float = 1.) -> torch.Tensor:
-        # mel
-        spec = torch.matmul(self.mel_filter, mag)
-
-        # spectral normalize
-        spec = torch.log(torch.clamp(spec, min=eps) * norm_ratio)
-
-        return spec
+    def to_mel(self, mag: torch.Tensor) -> torch.Tensor:
+        return torch.matmul(self.mel_filter, mag)
 
     @torch.no_grad()
-    def forward(self, wav: torch.Tensor, is_pad: bool = False) -> torch.Tensor:
+    def forward(self, wav: torch.Tensor, is_pad: bool = False,
+                norm_ratio: float = 1., eps: float = 1e-5) -> torch.Tensor:
         """
         Convert raw waveform to log-mel spectrogram.
         :param wav: raw waveform tensor (N, Tw)
@@ -55,4 +50,4 @@ class MelSpectrogram(nn.Module):
         if is_pad:
             pads = ((self.n_fft - self.hop_size) // 2, (self.n_fft - self.hop_size) // 2)
             wav = torch.nn.functional.pad(wav.unsqueeze(1), pads, mode='reflect').squeeze(1)
-        return self.to_mel(self.stft(wav)[0])
+        return torch.log(torch.clamp(self.to_mel(self.stft(wav)[0]), min=eps) * norm_ratio)
